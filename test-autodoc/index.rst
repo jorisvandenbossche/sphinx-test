@@ -8,7 +8,7 @@ Welcome to test-toctree's documentation!
 
 
 
-.. autofunction:: pandas.DataFrame.mean
+.. autofunction:: pandas.DataFrame.drop_duplicates
 
 
 
