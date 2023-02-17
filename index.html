@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <title>pandas - Python Data Analysis Library</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel='shortcut icon' type='image/x-icon' id='favicon-tag' href='static/img/favicon.ico'/>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+              crossorigin="anonymous">
+        
+            <link rel="stylesheet"
+                  href="static/css/pandas.css">
+        
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="."><img alt="" src="static/img/pandas_white.svg"/></a>
+
+                    <div class="collapse navbar-collapse" id="nav-content">   
+                        <ul class="navbar-nav ms-auto">
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="about-us"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">About us</a>
+                                        <div class="dropdown-menu" aria-labelledby="about-us">
+                                        
+                                            <a class="dropdown-item" href="about/">About pandas</a>
+                                        
+                                            <a class="dropdown-item" href="about/roadmap.html">Project roadmap</a>
+                                        
+                                            <a class="dropdown-item" href="about/governance.html">Governance</a>
+                                        
+                                            <a class="dropdown-item" href="about/team.html">Team</a>
+                                        
+                                            <a class="dropdown-item" href="about/sponsors.html">Sponsors</a>
+                                        
+                                            <a class="dropdown-item" href="about/citing.html">Citing and logo</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="getting_started.html">Getting started</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="docs/">Documentation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="community"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">Community</a>
+                                        <div class="dropdown-menu" aria-labelledby="community">
+                                        
+                                            <a class="dropdown-item" href="community/blog/">Blog</a>
+                                        
+                                            <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
+                                        
+                                            <a class="dropdown-item" href="community/coc.html">Code of conduct</a>
+                                        
+                                            <a class="dropdown-item" href="community/ecosystem.html">Ecosystem</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="contribute.html">Contribute</a>
+                                    </li>
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+            <div class="container">
+                
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section class="h-30 p-5 bg-light border rounded-3 text-center mb-4">
+                    <h1>pandas</h1>
+                    <p>
+                        <strong>pandas</strong> is a fast, powerful, flexible and easy to use open source data analysis and manipulation tool,<br/>
+                        built on top of the <a href="https://www.python.org">Python</a> programming language.
+                    </p>
+                    <p>
+                        <a class="btn btn-primary" href="getting_started.html">Install pandas now!</a>
+                    </p>
+                </section>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Getting started</h5>
+                        <ul>
+                            <!-- <li><a href="/try.html">Try pandas online</a></li> -->
+                            <li><a href="getting_started.html">Install pandas</a></li>
+                            <li><a href="docs/getting_started/index.html">Getting started</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Documentation</h5>
+                        <ul>
+                            <li><a href="docs/user_guide/index.html">User guide</a></li>
+                            <li><a href="docs/reference/index.html">API reference</a></li>
+                            <li><a href="docs/development/index.html">Contributing to pandas</a></li>
+                            <li><a href="docs/whatsnew/index.html">Release notes</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Community</h5>
+                        <ul>
+                            <li><a href="about/index.html">About pandas</a></li>
+                            <li><a href="https://stackoverflow.com/questions/tagged/pandas">Ask a question</a></li>
+                            <li><a href="community/ecosystem.html">Ecosystem</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <section>
+                    <h5>With the support of:</h5>
+                    
+                        <div class="row mx-auto h-100">
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://numfocus.org/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="NumFOCUS" src="static/img/partners/numfocus.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://www.twosigma.com/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Two Sigma" src="static/img/partners/two_sigma.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://voltrondata.com/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Voltron Data" src="static/img/partners/voltron_data.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://www.d-fine.com/en/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="d-fine GmbH" src="static/img/partners/dfine.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://quansight.com/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Quansight" src="static/img/partners/quansight_labs.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://www.nvidia.com" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Nvidia" src="static/img/partners/nvidia.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                        </div>
+                    
+                        <div class="row mx-auto h-100">
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://www.intel.com/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Intel" src="/static/img/partners/intel.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://tidelift.com" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Tidelift" src="static/img/partners/tidelift.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://chanzuckerberg.com/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Chan Zuckerberg Initiative" src="static/img/partners/czi.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                        <a href="https://www.bodo.ai/" target="_blank">
+                                            <img class="img-fluid img-thumnail py-5 mx-auto" alt="Bodo" src="static/img/partners/bodo.svg"/>
+                                        </a>
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                </div>
+                            
+                                <div class="col-6 col-md-2">
+                                    
+                                </div>
+                            
+                        </div>
+                    
+                    <p class="mt-4">The full list of companies supporting <i>pandas</i> is available in the <a href="about/sponsors.html">sponsors page</a>.
+                </section>
+            </div>
+            <div class="col-md-3">
+                
+                    <h4>Latest version: 1.5.3</h4>
+                    <ul>
+                        <li><a href="docs/whatsnew/v1.5.3.html">What's new in 1.5.3</a></li>
+                        <li>Release date:<br/>Jan 19, 2023</li>
+                        <li><a href="docs/">Documentation (web)</a></li>
+                        <li><a href="https://github.com/pandas-dev/pandas/releases/download/v1.5.3/pandas-1.5.3.tar.gz">Download source code</a></li>
+                    </ul>
+                
+                <h4>Follow us</h4>
+                <div class="text-center">
+                    <ul class="list-inline social-buttons">
+                        <li class="list-inline-item">
+                            <a href="https://t.me/s/pandas_dev">
+                                <i class="follow-us-button fab fa-telegram"></i>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://twitter.com/pandas_dev/">
+                                <i class="follow-us-button fab fa-twitter"></i>
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+				<h4>Get the book</h4>
+				<p class="book">
+					<a href="https://amzn.to/3DyLaJc">
+						<img class="img-fluid" alt="Python for Data Analysis" src="static/img/pydata_book.gif"/>
+					</a>
+				</p>
+                
+                    <h4>Previous versions</h4>
+                    <ul>
+                        
+                            <li class="small">
+                                1.5.2 (Nov 22, 2022)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.5.2.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.5.2/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.5.2/pandas-1.5.2.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.5.1 (Oct 19, 2022)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.5.1.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.5.1/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.5.1/pandas-1.5.1.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.5.0 (Sep 19, 2022)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.5.0.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.5.0/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.5.0/pandas-1.5.0.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.4.4 (Aug 31, 2022)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.4.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.4.4/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.4.4/pandas-1.4.4.tar.gz">code</a>
+                            </li>
+                        
+                    </ul>
+                
+                
+                    <p class="text-center">
+                        <a data-bs-toggle="collapse" href="#show-more-releases" role="button" aria-expanded="false" aria-controls="show-more-releases">Show more</a>
+                    </p>
+                    <ul id="show-more-releases" class="collapse">
+                        
+                            <li class="small">
+                                1.4.3 (2022-06-23)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.3.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.4.3/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.4.3/pandas-1.4.3.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.4.2 (2022-04-02)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.2.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.4.2/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.4.2/pandas-1.4.2.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.4.1 (2022-02-12)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.1.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.4.1/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.4.1/pandas-1.4.1.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.4.0 (2022-01-22)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.4.0.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.4.0/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.4.0/pandas-1.4.0.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.3.5 (2021-12-12)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.5.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.3.5/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.3.5/pandas-1.3.5.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.3.4 (2021-10-17)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.4.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.3.4/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.3.4/pandas-1.3.4.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.3.3 (2021-09-12)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.3.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.3.3/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.3.3/pandas-1.3.3.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.3.2 (2021-08-15)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.2.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.3.2/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.3.2/pandas-1.3.2.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.3.1 (2021-07-25)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.1.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.3.1/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.3.1/pandas-1.3.1.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.3.0 (2021-07-02)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.3.0.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.3.0/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.3.0/pandas-1.3.0.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.2.5 (2021-06-22)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.5.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.2.5/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.2.5/pandas-1.2.5.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.2.4 (2021-04-12)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.4.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.2.4/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.2.4/pandas-1.2.4.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.2.3 (2021-03-02)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.3.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.2.3/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.2.3/pandas-1.2.3.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.2.2 (2021-02-09)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.2.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.2.2/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.2.2/pandas-1.2.2.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.2.1 (2021-01-20)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.1.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.2.1/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.2.1/pandas-1.2.1.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.2.0 (2020-12-26)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.2.0.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.2.0/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.2.0/pandas-1.2.0.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.1.5 (2020-12-07)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.5.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.1.5/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.1.5/pandas-1.1.5.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.1.4 (2020-10-30)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.4.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.1.4/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.1.4/pandas-1.1.4.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.1.3 (2020-10-05)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.3.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.1.3/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.1.3/pandas-1.1.3.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.1.2 (2020-09-08)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.2.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.1.2/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.1.2/pandas-1.1.2.tar.gz">code</a>
+                            </li>
+                        
+                            <li class="small">
+                                1.1.1 (2020-08-20)<br/>
+                                <a href="https://pandas.pydata.org/pandas-docs/stable/whatsnew/v1.1.1.html">changelog</a> |
+                                <a href="https://pandas.pydata.org/pandas-docs/version/1.1.1/">docs</a> |
+                                <a href="https://github.com/pandas-dev/pandas/releases/download/v1.1.1/pandas-1.1.1.tar.gz">code</a>
+                            </li>
+                        
+                    </ul>
+                
+            </div>
+        </div>
+    </div>
+
+
+            </div>
+        </main>
+        <footer class="container pt-4 pt-md-5 border-top">
+            <ul class="list-inline social-buttons float-end">
+                <li class="list-inline-item">
+                    <a href="https://t.me/s/pandas_dev">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandas_dev/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/pandas-dev/pandas/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://stackoverflow.com/questions/tagged/pandas">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                &copy; 2023 pandas via <a href="https://numfocus.org">NumFOCUS, Inc.</a> Hosted by <a href="https://www.ovhcloud.com">OVHcloud</a>.
+            </p>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+                crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "/static/img/favicon_white.ico";
+                else faviconTag.href = "/static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>
+    </body>
+</html>

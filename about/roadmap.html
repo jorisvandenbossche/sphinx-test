@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <title>pandas - Python Data Analysis Library</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel='shortcut icon' type='image/x-icon' id='favicon-tag' href='../static/img/favicon.ico'/>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+              crossorigin="anonymous">
+        
+            <link rel="stylesheet"
+                  href="../static/css/pandas.css">
+        
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../."><img alt="" src="../static/img/pandas_white.svg"/></a>
+
+                    <div class="collapse navbar-collapse" id="nav-content">   
+                        <ul class="navbar-nav ms-auto">
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="about-us"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">About us</a>
+                                        <div class="dropdown-menu" aria-labelledby="about-us">
+                                        
+                                            <a class="dropdown-item" href="../about/">About pandas</a>
+                                        
+                                            <a class="dropdown-item" href="../about/roadmap.html">Project roadmap</a>
+                                        
+                                            <a class="dropdown-item" href="../about/governance.html">Governance</a>
+                                        
+                                            <a class="dropdown-item" href="../about/team.html">Team</a>
+                                        
+                                            <a class="dropdown-item" href="../about/sponsors.html">Sponsors</a>
+                                        
+                                            <a class="dropdown-item" href="../about/citing.html">Citing and logo</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../getting_started.html">Getting started</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../docs/">Documentation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="community"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">Community</a>
+                                        <div class="dropdown-menu" aria-labelledby="community">
+                                        
+                                            <a class="dropdown-item" href="../community/blog/">Blog</a>
+                                        
+                                            <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
+                                        
+                                            <a class="dropdown-item" href="../community/coc.html">Code of conduct</a>
+                                        
+                                            <a class="dropdown-item" href="../community/ecosystem.html">Ecosystem</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../contribute.html">Contribute</a>
+                                    </li>
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+            <div class="container">
+                <h1 id="roadmap">Roadmap</h1>
+<p>This page provides an overview of the major themes in pandas'
+development. Each of these items requires a relatively large amount of
+effort to implement. These may be achieved more quickly with dedicated
+funding or interest from contributors.</p>
+<p>An item being on the roadmap does not mean that it will <em>necessarily</em>
+happen, even with unlimited funding. During the implementation period we
+may discover issues preventing the adoption of the feature.</p>
+<p>Additionally, an item <em>not</em> being on the roadmap does not exclude it
+from inclusion in pandas. The roadmap is intended for larger,
+fundamental changes to the project that are likely to take months or
+years of developer time. Smaller-scoped items will continue to be
+tracked on our <a href="https://github.com/pandas-dev/pandas/issues">issue tracker</a>.</p>
+<p>The roadmap is defined as a set of major enhancement proposals named PDEPs.
+For more information about PDEPs, and how to submit one, please refer to
+<a href="../pdeps/0001-purpose-and-guidelines.html">PEDP-1</a>.</p>
+<h2 id="pdeps">PDEPs</h2>
+<p></p>
+<h3 id="pdeps-Under discussion">Under discussion</h3>
+
+<ul>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/51466">PDEP 8: Inplace methods in pandas</a></li>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/51463">PDEP-7: Consistent copy/view semantics in pandas with Copy-on-Write</a></li>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/51458">WEB: Add code highlighting in PDEPs and render tables correctly</a></li>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/51417">PDEP-1 first revision (scope)</a></li>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/50424">PDEP-6: Ban upcasting in Series setitem-like operations</a></li>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/49694">PDEP-5: NoRowIndex</a></li>
+
+    <li><a href="https://api.github.com/repos/pandas-dev/pandas/issues/48080">PDEP-3: Small data visualization consolidation</a></li>
+
+</ul>
+
+<p></p>
+<h3 id="pdeps-Accepted">Accepted</h3>
+
+<ul>
+
+    <li><a href="../pdeps/0001-purpose-and-guidelines.html">PDEP-1: Purpose and guidelines
+</a></li>
+
+    <li><a href="../pdeps/0004-consistent-to-datetime-parsing.html">PDEP-4: Consistent datetime parsing
+</a></li>
+
+</ul>
+
+<p></p>
+<h3 id="pdeps-Implemented">Implemented</h3>
+
+<ul>
+
+    <li>There are currently no PDEPs with this status</li>
+
+</ul>
+
+<p></p>
+<h3 id="pdeps-Rejected">Rejected</h3>
+
+<ul>
+
+    <li>There are currently no PDEPs with this status</li>
+
+</ul>
+
+<p></p>
+<h2 id="roadmap-points-pending-a-pdep">Roadmap points pending a PDEP</h2>
+<div class="alert alert-warning" role="alert">
+  pandas is in the process of moving roadmap points to PDEPs (implemented in
+  August 2022). During the transition, some roadmap points will exist as PDEPs,
+  while others will exist as sections below.
+</div>
+
+<h3 id="extensibility">Extensibility</h3>
+<p>Pandas <code>extending.extension-types</code> allow
+for extending NumPy types with custom data types and array storage.
+Pandas uses extension types internally, and provides an interface for
+3rd-party libraries to define their own custom data types.</p>
+<p>Many parts of pandas still unintentionally convert data to a NumPy
+array. These problems are especially pronounced for nested data.</p>
+<p>We'd like to improve the handling of extension arrays throughout the
+library, making their behavior more consistent with the handling of
+NumPy arrays. We'll do this by cleaning up pandas' internals and
+adding new methods to the extension array interface.</p>
+<h3 id="string-data-type">String data type</h3>
+<p>Currently, pandas stores text data in an <code>object</code> -dtype NumPy array.
+The current implementation has two primary drawbacks: First, <code>object</code>
+-dtype is not specific to strings: any Python object can be stored in an
+<code>object</code> -dtype array, not just strings. Second: this is not efficient.
+The NumPy memory model isn't especially well-suited to variable width
+text data.</p>
+<p>To solve the first issue, we propose a new extension type for string
+data. This will initially be opt-in, with users explicitly requesting
+<code>dtype="string"</code>. The array backing this string dtype may initially be
+the current implementation: an <code>object</code> -dtype NumPy array of Python
+strings.</p>
+<p>To solve the second issue (performance), we'll explore alternative
+in-memory array libraries (for example, Apache Arrow). As part of the
+work, we may need to implement certain operations expected by pandas
+users (for example the algorithm used in, <code>Series.str.upper</code>). That work
+may be done outside of pandas.</p>
+<h3 id="apache-arrow-interoperability">Apache Arrow interoperability</h3>
+<p><a href="https://arrow.apache.org">Apache Arrow</a> is a cross-language development
+platform for in-memory data. The Arrow logical types are closely aligned
+with typical pandas use cases.</p>
+<p>We'd like to provide better-integrated support for Arrow memory and
+data types within pandas. This will let us take advantage of its I/O
+capabilities and provide for better interoperability with other
+languages and libraries using Arrow.</p>
+<h3 id="block-manager-rewrite">Block manager rewrite</h3>
+<p>We'd like to replace pandas current internal data structures (a
+collection of 1 or 2-D arrays) with a simpler collection of 1-D arrays.</p>
+<p>Pandas internal data model is quite complex. A DataFrame is made up of
+one or more 2-dimensional "blocks", with one or more blocks per dtype.
+This collection of 2-D arrays is managed by the BlockManager.</p>
+<p>The primary benefit of the BlockManager is improved performance on
+certain operations (construction from a 2D array, binary operations,
+reductions across the columns), especially for wide DataFrames. However,
+the BlockManager substantially increases the complexity and maintenance
+burden of pandas.</p>
+<p>By replacing the BlockManager we hope to achieve</p>
+<ul>
+<li>Substantially simpler code</li>
+<li>Easier extensibility with new logical types</li>
+<li>Better user control over memory use and layout</li>
+<li>Improved micro-performance</li>
+<li>Option to provide a C / Cython API to pandas' internals</li>
+</ul>
+<p>See <a href="https://dev.pandas.io/pandas2/internal-architecture.html#removal-of-blockmanager-new-dataframe-internals">these design
+documents</a>
+for more.</p>
+<h3 id="decoupling-of-indexing-and-internals">Decoupling of indexing and internals</h3>
+<p>The code for getting and setting values in pandas' data structures
+needs refactoring. In particular, we must clearly separate code that
+converts keys (e.g., the argument to <code>DataFrame.loc</code>) to positions from
+code that uses these positions to get or set values. This is related to
+the proposed BlockManager rewrite. Currently, the BlockManager sometimes
+uses label-based, rather than position-based, indexing. We propose that
+it should only work with positional indexing, and the translation of
+keys to positions should be entirely done at a higher level.</p>
+<p>Indexing is a complicated API with many subtleties. This refactor will require care
+and attention. The following principles should inspire refactoring of indexing code and
+should result on cleaner, simpler, and more performant code.</p>
+<ol>
+<li>
+<p>Label indexing must never involve looking in an axis twice for the same label(s).
+This implies that any validation step must either:</p>
+</li>
+<li>
+<p>limit validation to general features (e.g. dtype/structure of the key/index), or</p>
+</li>
+<li>
+<p>reuse the result for the actual indexing.</p>
+</li>
+<li>
+<p>Indexers must never rely on an explicit call to other indexers.
+For instance, it is OK to have some internal method of <code>.loc</code> call some
+internal method of <code>__getitem__</code> (or of their common base class),
+but never in the code flow of <code>.loc</code> should <code>the_obj[something]</code> appear.</p>
+</li>
+<li>
+<p>Execution of positional indexing must never involve labels (as currently, sadly, happens).
+That is, the code flow of a getter call (or a setter call in which the right hand side is non-indexed)
+to <code>.iloc</code> should never involve the axes of the object in any way.</p>
+</li>
+<li>
+<p>Indexing must never involve accessing/modifying values (i.e., act on <code>._data</code> or <code>.values</code>) more than once.
+The following steps must hence be clearly decoupled:</p>
+</li>
+<li>
+<p>find positions we need to access/modify on each axis</p>
+</li>
+<li>(if we are accessing) derive the type of object we need to return (dimensionality)</li>
+<li>actually access/modify the values</li>
+<li>
+<p>(if we are accessing) construct the return object</p>
+</li>
+<li>
+<p>As a corollary to the decoupling between 4.i and 4.iii, any code which deals on how data is stored
+(including any combination of handling multiple dtypes, and sparse storage, categoricals, third-party types)
+must be independent from code that deals with identifying affected rows/columns,
+and take place only once step 4.i is completed.</p>
+</li>
+<li>
+<p>In particular, such code should most probably not live in <code>pandas/core/indexing.py</code></p>
+</li>
+<li>
+<p>... and must not depend in any way on the type(s) of axes (e.g. no <code>MultiIndex</code> special cases)</p>
+</li>
+<li>
+<p>As a corollary to point 1.i, <code>Index</code> (sub)classes must provide separate methods for any desired validity check of label(s) which does not involve actual lookup,
+on the one side, and for any required conversion/adaptation/lookup of label(s), on the other.</p>
+</li>
+<li>
+<p>Use of trial and error should be limited, and anyway restricted to catch only exceptions
+which are actually expected (typically <code>KeyError</code>).</p>
+</li>
+<li>
+<p>In particular, code should never (intentionally) raise new exceptions in the <code>except</code> portion of a <code>try... exception</code></p>
+</li>
+<li>
+<p>Any code portion which is not specific to setters and getters must be shared,
+and when small differences in behavior are expected (e.g. getting with <code>.loc</code> raises for
+missing labels, setting still doesn't), they can be managed with a specific parameter.</p>
+</li>
+</ol>
+<h3 id="numba-accelerated-operations">Numba-accelerated operations</h3>
+<p><a href="https://numba.pydata.org">Numba</a> is a JIT compiler for Python code.
+We'd like to provide ways for users to apply their own Numba-jitted
+functions where pandas accepts user-defined functions (for example,
+<code>Series.apply</code>,
+<code>DataFrame.apply</code>,
+<code>DataFrame.applymap</code>, and in groupby and
+window contexts). This will improve the performance of
+user-defined-functions in these operations by staying within compiled
+code.</p>
+<h3 id="documentation-improvements">Documentation improvements</h3>
+<p>We'd like to improve the content, structure, and presentation of the
+pandas documentation. Some specific goals include</p>
+<ul>
+<li>Overhaul the HTML theme with a modern, responsive design
+    (<code>15556</code>)</li>
+<li>Improve the "Getting Started" documentation, designing and writing
+    learning paths for users different backgrounds (e.g. brand new to
+    programming, familiar with other languages like R, already familiar
+    with Python).</li>
+<li>Improve the overall organization of the documentation and specific
+    subsections of the documentation to make navigation and finding
+    content easier.</li>
+</ul>
+<h3 id="performance-monitoring">Performance monitoring</h3>
+<p>Pandas uses <a href="https://asv.readthedocs.io/en/stable/">airspeed velocity</a>
+to monitor for performance regressions. ASV itself is a fabulous tool,
+but requires some additional work to be integrated into an open source
+project's workflow.</p>
+<p>The <a href="https://github.com/asv-runner">asv-runner</a> organization, currently
+made up of pandas maintainers, provides tools built on top of ASV. We
+have a physical machine for running a number of project's benchmarks,
+and tools managing the benchmark runs and reporting on results.</p>
+<p>We'd like to fund improvements and maintenance of these tools to</p>
+<ul>
+<li>Be more stable. Currently, they're maintained on the nights and
+    weekends when a maintainer has free time.</li>
+<li>Tune the system for benchmarks to improve stability, following
+    <a href="https://pyperf.readthedocs.io/en/latest/system.html">https://pyperf.readthedocs.io/en/latest/system.html</a></li>
+<li>Build a GitHub bot to request ASV runs <em>before</em> a PR is merged.
+    Currently, the benchmarks are only run nightly.</li>
+</ul>
+            </div>
+        </main>
+        <footer class="container pt-4 pt-md-5 border-top">
+            <ul class="list-inline social-buttons float-end">
+                <li class="list-inline-item">
+                    <a href="https://t.me/s/pandas_dev">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandas_dev/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/pandas-dev/pandas/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://stackoverflow.com/questions/tagged/pandas">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                &copy; 2023 pandas via <a href="https://numfocus.org">NumFOCUS, Inc.</a> Hosted by <a href="https://www.ovhcloud.com">OVHcloud</a>.
+            </p>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+                crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "..//static/img/favicon_white.ico";
+                else faviconTag.href = "..//static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>
+    </body>
+</html>

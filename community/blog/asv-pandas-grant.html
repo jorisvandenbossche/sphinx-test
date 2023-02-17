@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <title>pandas - Python Data Analysis Library</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel='shortcut icon' type='image/x-icon' id='favicon-tag' href='../../static/img/favicon.ico'/>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+              crossorigin="anonymous">
+        
+            <link rel="stylesheet"
+                  href="../../static/css/pandas.css">
+        
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../../."><img alt="" src="../../static/img/pandas_white.svg"/></a>
+
+                    <div class="collapse navbar-collapse" id="nav-content">   
+                        <ul class="navbar-nav ms-auto">
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="about-us"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">About us</a>
+                                        <div class="dropdown-menu" aria-labelledby="about-us">
+                                        
+                                            <a class="dropdown-item" href="../../about/">About pandas</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/roadmap.html">Project roadmap</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/governance.html">Governance</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/team.html">Team</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/sponsors.html">Sponsors</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/citing.html">Citing and logo</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../getting_started.html">Getting started</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../docs/">Documentation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="community"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">Community</a>
+                                        <div class="dropdown-menu" aria-labelledby="community">
+                                        
+                                            <a class="dropdown-item" href="../../community/blog/">Blog</a>
+                                        
+                                            <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
+                                        
+                                            <a class="dropdown-item" href="../../community/coc.html">Code of conduct</a>
+                                        
+                                            <a class="dropdown-item" href="../../community/ecosystem.html">Ecosystem</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../contribute.html">Contribute</a>
+                                    </li>
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+            <div class="container">
+                <h1 id="write-up-of-the-numfocus-grant-to-improve-pandas-benchmarks-and-diversity">Write up of the NumFOCUS grant to improve pandas benchmarks and diversity</h1>
+<p><em>By Lucy Jiménez and Dorothy Kabarozi B.</em></p>
+<p>We want to share our experience working on <strong>Improvements to the</strong>
+<strong>ASV benchmarking framework and diversity efforts</strong> sponsored by
+<a href="https://numfocus.org/">NumFOCUS</a> to the <a href="https://pandas.pydata.org/">pandas</a>
+project.</p>
+<p>This grant focused on two aspects: the first one is to improve the
+<a href="https://asv.readthedocs.io/en/stable/">asv library</a>, a tool used by
+benchmarking Python packages and used by pandas; this project was
+unmaintained, and the codebase was quite old; additionally, it didn't
+adhere to modern standards, had Python 2 compatibility code that could
+be removed, and also the CI could be improved. The second aspect is
+encouraging more underrepresented groups to contribute to open source
+projects. This grant was held over 10 weeks, working around 20 hours a
+week. It was developed by Dorothy Kabarozi B. from Uganda and Lucy
+Jiménez from Colombia, under the mentoring of Marc Garcia.</p>
+<h2 id="why-were-we-part-of-the-grant">Why were we part of the grant?</h2>
+<p>Even when we come from different backgrounds, Dorothy from systems
+engineering and Lucy from computational chemistry, we have always been
+interested in participating and contributing to open source software
+projects. For that reason, we have been running the PyLadies meetups in
+our communities (<a href="https://twitter.com/pyladieskla">PyLadies Kampala</a>,
+<a href="https://twitter.com/pyladies_co">PyLadies Colombia</a>) and have always
+been on the lookout for any opportunities that lead us to contribute.</p>
+<p>It all happened through Marc Garcia; he had put out a call ​through a post
+on social media to mentor ladies from diverse backgrounds. Dorothy got to
+be part of the pandas mentorship group. At the same time, Lucy was
+co-organizer of the SciPy Latam conference, and it is from here she met
+Marc, who was the speaker at that conference, and through this mutual
+connection, we were able to learn about this benchmarks grant.</p>
+<p>In brief, by attending conferences, meetups, and social media, you can
+make connections and links that will lead you to these opportunities.</p>
+<h2 id="learning-from-the-source-code">Learning from the source code</h2>
+<p>At the beginning of the grant, we started from the basics. We noticed that
+we could improve our skills in managing Git and GitHub. For example, we had
+some troubles with the git workflow, so we had to read and practice more
+about it. One of the valuable resources was the explanation from Marc about
+<a href="https://tubedu.org/w/kjnHEg72j76StmSFmjzbnE">how to make an open source contribution</a>,
+which we invite you to take a look at it.</p>
+<p>We learned a lot from the source code and gained immense knowledge about
+best practices and code quality through this grant. We have been working
+on: updating the code to improve the style to follow the PEP-8 guidelines,
+removing Python 2 compatibility code and six dependencies, and finding
+unused code and removing it. We also learned about GitHub actions, and we
+started building the CI on GitHub actions for the asv package; for that we
+have been working on add linting with Flake8, testing with pytest, building
+docs, and running CI on different python versions.</p>
+<p>Additionally, we were able to identify bugs in the source code, review
+pull request from other contributors, and create new issues, something we
+thought only maintainers could do but not contributors. Finally, not only
+is reviewing the code itself a learning experience, but also the structure
+and folder hierarchy in the project started to be more transparent.</p>
+<h2 id="our-experience">Our experience</h2>
+<p>For this grant, we had a fantastic Mentor, Marc Garcia. He was always
+willing to share his knowledge, explain unclear concepts and share helpful
+feedback. Whenever we would implement that feedback, it felt easier to work
+on more issues faster. We felt the growth from the time we started on this
+project, and we will carry it along as we contribute to more open source
+projects; this all goes back to Marc for his fantastic mentorship. It is
+also important to note that we received feedback from other contributors,
+stakeholders, and core devs during this process, which gave us a broader
+look at the work in open source projects.</p>
+<p>We also built a strong teamwork partnership. We helped each other a lot as
+we had numerous one-on-one calls to understand the tasks better. We always
+looked for ways to support each other from the technical side and encouraged
+each other when needed. For us, it was professional and human growth.</p>
+<h2 id="running-an-open-source-software-sprint">Running an open source software sprint</h2>
+<p>The knowledge and experience acquired in this process allowed us to
+organize two virtual sprints. The events were carried out in the company
+of local PyLadies communities; the first one was on February 26th with
+<a href="https://twitter.com/pyladieskla">PyLadies Kampala</a> and on March 21
+with <a href="https://bit.ly/sprint-asv">PyLadies Colombia</a>.</p>
+<p>While organizing these events, we learned how to organize and conduct a
+virtual sprint. Some participants in the sprint ultimately had no idea
+about open source, and it was great explaining open source concepts and
+taking them through the Git workflow. Finally, they were able to make their
+first contribution. We learned how to follow up on contributors, helping
+them along the way until their PRs were merged and by reviewing their
+contributions on GitHub.</p>
+<p>The most outstanding achievement was mentoring new contributors and
+sharing the knowledge acquired from this grant with others participants
+in our respective communities. Most new contributors after the experience
+have gone ahead to apply for outreach and the upcoming
+<a href="https://summerofcode.withgoogle.com/">Google Summer of Code</a>
+to apply the skills they learned from these sprints.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>In conclusion, we learned a lot from this experience from the code part,
+the workflow on the open source projects, how to be resilient in difficult
+moments, and encouraging more women and people from our local communities
+to contribute to open source projects.</p>
+<p>Finally, if you want to be part of an open source project, we invite you
+to check out GitHub repos for different projects you are interested in and
+search for the easy issues to work on and get started. Also, you can contact
+the maintainers of the projects with specific questions, search for the
+open source communities in your country or contact us for more help.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>Many thanks to <a href="https://numfocus.org/">NumFOCUS</a> for giving us this support
+through <a href="https://numfocus.org/programs/small-development-grants">Small Development Grants</a>
+and Marc for the excellent mentoring he generously gave us throughout these
+weeks.</p>
+<p>We are looking forward to contributing more and impacting our communities
+and the open source community!</p>
+<hr />
+<p>If you want to know more, please don't hesitate to connect with us through
+these channels:</p>
+<p><em>Lucy Jiménez</em>
+* <a href="https://twitter.com/JimenezLucyJ">Twitter</a>
+* <a href="https://www.linkedin.com/in/lucy-j/">LinkedIn</a></p>
+<p><em>Dorothy Kabarozi</em>
+* <a href="https://twitter.com/kizdorothy">Twitter</a>
+* <a href="https://www.linkedin.com/in/dorothy-kabarozi/">LinkedIn</a></p>
+            </div>
+        </main>
+        <footer class="container pt-4 pt-md-5 border-top">
+            <ul class="list-inline social-buttons float-end">
+                <li class="list-inline-item">
+                    <a href="https://t.me/s/pandas_dev">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandas_dev/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/pandas-dev/pandas/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://stackoverflow.com/questions/tagged/pandas">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                &copy; 2023 pandas via <a href="https://numfocus.org">NumFOCUS, Inc.</a> Hosted by <a href="https://www.ovhcloud.com">OVHcloud</a>.
+            </p>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+                crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "../..//static/img/favicon_white.ico";
+                else faviconTag.href = "../..//static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>
+    </body>
+</html>

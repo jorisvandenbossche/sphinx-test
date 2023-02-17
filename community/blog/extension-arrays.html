@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <title>pandas - Python Data Analysis Library</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel='shortcut icon' type='image/x-icon' id='favicon-tag' href='../../static/img/favicon.ico'/>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+              crossorigin="anonymous">
+        
+            <link rel="stylesheet"
+                  href="../../static/css/pandas.css">
+        
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../../."><img alt="" src="../../static/img/pandas_white.svg"/></a>
+
+                    <div class="collapse navbar-collapse" id="nav-content">   
+                        <ul class="navbar-nav ms-auto">
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="about-us"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">About us</a>
+                                        <div class="dropdown-menu" aria-labelledby="about-us">
+                                        
+                                            <a class="dropdown-item" href="../../about/">About pandas</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/roadmap.html">Project roadmap</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/governance.html">Governance</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/team.html">Team</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/sponsors.html">Sponsors</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/citing.html">Citing and logo</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../getting_started.html">Getting started</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../docs/">Documentation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="community"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">Community</a>
+                                        <div class="dropdown-menu" aria-labelledby="community">
+                                        
+                                            <a class="dropdown-item" href="../../community/blog/">Blog</a>
+                                        
+                                            <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
+                                        
+                                            <a class="dropdown-item" href="../../community/coc.html">Code of conduct</a>
+                                        
+                                            <a class="dropdown-item" href="../../community/ecosystem.html">Ecosystem</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../contribute.html">Contribute</a>
+                                    </li>
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+            <div class="container">
+                <h1 id="pandas-extension-arrays">pandas extension arrays</h1>
+<p>Extensibility was a major theme in pandas development over the last couple of
+releases. This post introduces the pandas extension array interface: the
+motivation behind it and how it might affect you as a pandas user. Finally, we
+look at how extension arrays may shape the future of pandas.</p>
+<p>Extension Arrays are just one of the changes in pandas 0.24.0. See the
+<a href="http://pandas.pydata.org/pandas-docs/version/0.24/whatsnew/v0.24.0.html">whatsnew</a> for a full changelog.</p>
+<h2 id="the-motivation">The Motivation</h2>
+<p>Pandas is built on top of NumPy. You could roughly define a Series as a wrapper
+around a NumPy array, and a DataFrame as a collection of Series with a shared
+index. That's not entirely correct for several reasons, but I want to focus on
+the "wrapper around a NumPy array" part. It'd be more correct to say "wrapper
+around an array-like object".</p>
+<p>Pandas mostly uses NumPy's builtin data representation; we've restricted it in
+places and extended it in others. For example, pandas' early users cared greatly
+about timezone-aware datetimes, which NumPy doesn't support. So pandas
+internally defined a <code>DatetimeTZ</code> dtype (which mimics a NumPy dtype), and
+allowed you to use that dtype in <code>Index</code>, <code>Series</code>, and as a column in a
+<code>DataFrame</code>. That dtype carried around the tzinfo, but wasn't itself a valid
+NumPy dtype.</p>
+<p>As another example, consider <code>Categorical</code>. This actually composes <em>two</em> arrays:
+one for the <code>categories</code> and one for the <code>codes</code>. But it can be stored in a
+<code>DataFrame</code> like any other column.</p>
+<p>Each of these extension types pandas added is useful on its own, but carries a
+high maintenance cost. Large sections of the codebase need to be aware of how to
+handle a NumPy array or one of these other kinds of special arrays. This made
+adding new extension types to pandas very difficult.</p>
+<p>Anaconda, Inc. had a client who regularly dealt with datasets with IP addresses.
+They wondered if it made sense to add an <a href="https://github.com/pandas-dev/pandas/issues/18767">IPArray</a> to pandas. In the
+end, we didn't think it passed the cost-benefit test for inclusion in pandas
+<em>itself</em>, but we were interested in defining an interface for third-party
+extensions to pandas. Any object implementing this interface would be allowed in
+pandas. I was able to write <a href="https://cyberpandas.readthedocs.io">cyberpandas</a> outside of pandas, but it
+feels like using any other dtype built into pandas.</p>
+<h2 id="the-current-state">The Current State</h2>
+<p>As of pandas 0.24.0, all of pandas' internal extension arrays (Categorical,
+Datetime with Timezone, Period, Interval, and Sparse) are now built on top of
+the ExtensionArray interface. Users shouldn't notice many changes. The main
+thing you'll notice is that things are cast to <code>object</code> dtype in fewer places,
+meaning your code will run faster and your types will be more stable. This
+includes storing <code>Period</code> and <code>Interval</code> data in <code>Series</code> (which were previously
+cast to object dtype).</p>
+<p>Additionally, we'll be able to add <em>new</em> extension arrays with relative ease.
+For example, 0.24.0 (optionally) solved one of pandas longest-standing pain
+points: missing values casting integer-dtype values to float.</p>
+<pre><code class="language-python">&gt;&gt;&gt; int_ser = pd.Series([1, 2], index=[0, 2])
+&gt;&gt;&gt; int_ser
+0    1
+2    2
+dtype: int64
+
+&gt;&gt;&gt; int_ser.reindex([0, 1, 2])
+0    1.0
+1    NaN
+2    2.0
+dtype: float64
+</code></pre>
+<p>With the new <a href="http://pandas.pydata.org/pandas-docs/version/0.24/reference/api/pandas.arrays.IntegerArray.html">IntegerArray</a> and nullable integer dtypes, we can
+natively represent integer data with missing values.</p>
+<pre><code class="language-python">&gt;&gt;&gt; int_ser = pd.Series([1, 2], index=[0, 2], dtype=pd.Int64Dtype())
+&gt;&gt;&gt; int_ser
+0    1
+2    2
+dtype: Int64
+
+&gt;&gt;&gt; int_ser.reindex([0, 1, 2])
+0      1
+1    NaN
+2      2
+dtype: Int64
+</code></pre>
+<p>One thing it does slightly change how you should access the raw (unlabeled)
+arrays stored inside a Series or Index, which is occasionally useful. Perhaps
+the method you're calling only works with NumPy arrays, or perhaps you want to
+disable automatic alignment.</p>
+<p>In the past, you'd hear things like "Use <code>.values</code> to extract the NumPy array
+from a Series or DataFrame." If it were a good resource, they'd tell you that's
+not <em>entirely</em> true, since there are some exceptions. I'd like to delve into
+those exceptions.</p>
+<p>The fundamental problem with <code>.values</code> is that it serves two purposes:</p>
+<ol>
+<li>Extracting the array backing a Series, Index, or DataFrame</li>
+<li>Converting the Series, Index, or DataFrame to a NumPy array</li>
+</ol>
+<p>As we saw above, the "array" backing a Series or Index might not be a NumPy
+array, it may instead be an extension array (from pandas or a third-party
+library). For example, consider <code>Categorical</code>,</p>
+<pre><code class="language-python">&gt;&gt;&gt; cat = pd.Categorical(['a', 'b', 'a'], categories=['a', 'b', 'c'])
+&gt;&gt;&gt; ser = pd.Series(cat)
+&gt;&gt;&gt; ser
+0    a
+1    b
+2    a
+dtype: category
+Categories (3, object): ['a', 'b', 'c']
+
+&gt;&gt;&gt; ser.values
+[a, b, a]
+Categories (3, object): ['a', 'b', 'c']
+</code></pre>
+<p>In this case <code>.values</code> is a Categorical, not a NumPy array. For period-dtype
+data, <code>.values</code> returns a NumPy array of <code>Period</code> objects, which is expensive to
+create. For timezone-aware data, <code>.values</code> converts to UTC and <em>drops</em> the
+timezone info. These kind of surprises (different types, or expensive or lossy
+conversions) stem from trying to shoehorn these extension arrays into a NumPy
+array. But the entire point of an extension array is for representing data NumPy
+<em>can't</em> natively represent.</p>
+<p>To solve the <code>.values</code> problem, we've split its roles into two dedicated methods:</p>
+<ol>
+<li>Use <code>.array</code> to get a zero-copy reference to the underlying data</li>
+<li>Use <code>.to_numpy()</code> to get a (potentially expensive, lossy) NumPy array of the
+   data.</li>
+</ol>
+<p>So with our Categorical example,</p>
+<pre><code class="language-python">&gt;&gt;&gt; ser.array
+[a, b, a]
+Categories (3, object): ['a', 'b', 'c']
+
+&gt;&gt;&gt; ser.to_numpy()
+array(['a', 'b', 'a'], dtype=object)
+</code></pre>
+<p>To summarize:</p>
+<ul>
+<li><code>.array</code> will <em>always</em> be a an ExtensionArray, and is always a zero-copy
+   reference back to the data.</li>
+<li><code>.to_numpy()</code> is <em>always</em> a NumPy array, so you can reliably call
+   ndarray-specific methods on it.</li>
+</ul>
+<p>You shouldn't ever need <code>.values</code> anymore.</p>
+<h2 id="possible-future-paths">Possible Future Paths</h2>
+<p>Extension Arrays open up quite a few exciting opportunities. Currently, pandas
+represents string data using Python objects in a NumPy array, which is slow.
+Libraries like <a href="https://arrow.apache.org">Apache Arrow</a> provide native support for variable-length
+strings, and the <a href="https://github.com/xhochy/fletcher">Fletcher</a> library provides pandas extension arrays
+for Arrow arrays. It will allow <a href="https://github.com/geopandas/geopandas">GeoPandas</a> to store geometry data
+more efficiently. Pandas (or third-party libraries) will be able to support
+nested data, data with units, geo data, GPU arrays. Keep an eye on the
+<a href="http://pandas.pydata.org/pandas-docs/stable/ecosystem.html#extension-data-types">pandas ecosystem</a> page, which will keep track of third-party extension
+arrays. It's an exciting time for pandas development.</p>
+<h2 id="other-thoughts">Other Thoughts</h2>
+<p>I'd like to emphasize that this is an <em>interface</em>, and not a concrete array
+implementation. We are <em>not</em> reimplementing NumPy here in pandas. Rather, this
+is a way to take any array-like data structure (one or more NumPy arrays, an
+Apache Arrow array, a CuPy array) and place it inside a DataFrame. I think
+getting pandas out of the array business, and instead thinking about
+higher-level tabular data things, is a healthy development for the project.</p>
+<p>This works perfectly with NumPy's <a href="https://numpy.org/neps/nep-0013-ufunc-overrides.html"><code>__array_ufunc__</code></a> protocol and
+<a href="https://www.numpy.org/neps/nep-0018-array-function-protocol.html">NEP-18</a>. You'll be able to use the familiar NumPy API on objects that
+aren't backed by NumPy memory.</p>
+<h2 id="upgrade">Upgrade</h2>
+<p>These new goodies are all available in the recently released pandas 0.24.</p>
+<p>conda:</p>
+<pre><code>conda install -c conda-forge pandas
+</code></pre>
+<p>pip:</p>
+<pre><code>pip install --upgrade pandas
+</code></pre>
+<p>As always, we're happy to hear feedback on the <a href="https://mail.python.org/mailman/listinfo/pandas-dev">mailing list</a>,
+<a href="https://twitter.com/pandas_dev">@pandas-dev</a>, or <a href="https://github.com/pandas-dev/pandas/issues">issue tracker</a>.</p>
+<p>Thanks to the many contributors, maintainers, and <a href="https://pandas.pydata.org/about/sponsors.html">institutional
+partners</a> involved in the pandas community.</p>
+            </div>
+        </main>
+        <footer class="container pt-4 pt-md-5 border-top">
+            <ul class="list-inline social-buttons float-end">
+                <li class="list-inline-item">
+                    <a href="https://t.me/s/pandas_dev">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandas_dev/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/pandas-dev/pandas/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://stackoverflow.com/questions/tagged/pandas">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                &copy; 2023 pandas via <a href="https://numfocus.org">NumFOCUS, Inc.</a> Hosted by <a href="https://www.ovhcloud.com">OVHcloud</a>.
+            </p>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+                crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "../..//static/img/favicon_white.ico";
+                else faviconTag.href = "../..//static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>
+    </body>
+</html>

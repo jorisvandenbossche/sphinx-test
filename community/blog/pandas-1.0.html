@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript">
+            var _gaq = _gaq || []; _gaq.push(['_setAccount', 'UA-27880019-2']); _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>
+        <title>pandas - Python Data Analysis Library</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel='shortcut icon' type='image/x-icon' id='favicon-tag' href='../../static/img/favicon.ico'/>
+        <link rel="stylesheet"
+              href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+              integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+              crossorigin="anonymous">
+        
+            <link rel="stylesheet"
+                  href="../../static/css/pandas.css">
+        
+        <script src="https://kit.fontawesome.com/79e5369384.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header>
+            <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div class="container">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../../."><img alt="" src="../../static/img/pandas_white.svg"/></a>
+
+                    <div class="collapse navbar-collapse" id="nav-content">   
+                        <ul class="navbar-nav ms-auto">
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="about-us"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">About us</a>
+                                        <div class="dropdown-menu" aria-labelledby="about-us">
+                                        
+                                            <a class="dropdown-item" href="../../about/">About pandas</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/roadmap.html">Project roadmap</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/governance.html">Governance</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/team.html">Team</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/sponsors.html">Sponsors</a>
+                                        
+                                            <a class="dropdown-item" href="../../about/citing.html">Citing and logo</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../getting_started.html">Getting started</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../docs/">Documentation</a>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle"
+                                           data-bs-toggle="dropdown"
+                                           id="community"
+                                           href="#"
+                                           role="button"
+                                           aria-haspopup="true"
+                                           aria-expanded="false">Community</a>
+                                        <div class="dropdown-menu" aria-labelledby="community">
+                                        
+                                            <a class="dropdown-item" href="../../community/blog/">Blog</a>
+                                        
+                                            <a class="dropdown-item" href="https://stackoverflow.com/questions/tagged/pandas">Ask a question (StackOverflow)</a>
+                                        
+                                            <a class="dropdown-item" href="../../community/coc.html">Code of conduct</a>
+                                        
+                                            <a class="dropdown-item" href="../../community/ecosystem.html">Ecosystem</a>
+                                        
+                                        </div>
+                                    </li>
+                                
+                            
+                                
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../../contribute.html">Contribute</a>
+                                    </li>
+                                
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main role="main">
+            <div class="container">
+                <h1 id="pandas-10">pandas 1.0</h1>
+<p>Today pandas celebrates its 1.0.0 release. In many ways this is just a normal release with a host of new features, performance improvements, and bug fixes, which are documented in our <a href="https://pandas.pydata.org/pandas-docs/version/1.0.0/whatsnew/v1.0.0.html">release notes</a>. But it’s also something a bit more — a milestone for the project beyond just the commits. We wanted to take some time to reflect on where we've been and where we're going.</p>
+<h2 id="reflections">Reflections</h2>
+<p>The world of scientific Python has changed a lot since pandas was started.  In 2011, <a href="https://wesmckinney.com/blog/a-roadmap-for-rich-scientific-data-structures-in-python/">the ecosystem was fragmented</a>: a standard <em>rich</em> data structure for statistics and data science had yet to emerge. This echos a similar story for NumPy, which consolidated array efforts that were <a href="https://numpy.org/old_array_packages.html">previously fragmented</a>.</p>
+<p>Over the subsequent years, pandas emerged as a <em>de facto</em> standard. It’s used by data scientists and analysts and as a data structure for other libraries to build on top of. StackOverflow <a href="https://stackoverflow.blog/2017/09/14/python-growing-quickly/">cited pandas</a> as one of the reasons for Python being the fastest growing major programming language.</p>
+<p><img alt="Growth of pandas" src="https://149351115.v2.pressablecdn.com/wp-content/uploads/2017/09/related_tags_over_time-1-1000x1000.png" /></p>
+<p>Today, the ecosystem is in another phase of exploration.
+Several new DataFrame implementations are cropping up to fill needs not met by pandas.
+We're <a href="https://datapythonista.me/blog/dataframe-summit-at-euroscipy.html">working with those projects</a> to establish shared standards and semantics for rich data structures.</p>
+<h2 id="community-and-project-health">Community and Project Health</h2>
+<p>This release cycle is the first to involve any kind of grant funding for pandas. <a href="https://chanzuckerberg.com/eoss/proposals/">Pandas received funding</a> as part of the CZI’s <a href="https://medium.com/@cziscience/the-invisible-foundations-of-biomedicine-4ab7f8d4f5dd"><em>Essential Open Source Software for Science</em></a> <a href="https://medium.com/@cziscience/the-invisible-foundations-of-biomedicine-4ab7f8d4f5dd">program</a>. The pandas project relies overwhelmingly on volunteer contributors. These volunteer contributions are shepherded and augmented by some maintainers who are given time from their employers — our <a href="../about/sponsors.html">institutional partners</a>. The largest work item in our grant award was library maintenance, which specifically includes working with community members to address our large backlog of open issues and pull requests.</p>
+<p>While a “1.0.0” version might seem arbitrary or anti-climactic (given that pandas as a codebase is nearly 12 years old), we see it as a symbolic milestone celebrating the growth of our core developer team and depth of our contributor base.  Few open source projects are ever truly “done” and pandas is no different. We recognize the essential role that pandas now occupies, and we intend to continue to evolve the project and adapt to the needs of the world’s data wranglers.</p>
+<h2 id="going-forward">Going Forward</h2>
+<p>Our <a href="https://pandas.pydata.org/pandas-docs/version/1.0.0/development/roadmap.html">roadmap</a> contains an up-to-date listing of where we see the project heading over the next few years.
+Needless to say, there's still plenty to do.</p>
+<p>Check out the <a href="https://pandas.pydata.org/pandas-docs/version/1.0.0/whatsnew/v1.0.0.html">release notes</a> and visit the <a href="https://pandas.pydata.org/pandas-docs/version/1.0.0/getting_started/install.html">installation page</a> for instructions on updating to pandas 1.0.</p>
+            </div>
+        </main>
+        <footer class="container pt-4 pt-md-5 border-top">
+            <ul class="list-inline social-buttons float-end">
+                <li class="list-inline-item">
+                    <a href="https://t.me/s/pandas_dev">
+                        <i class="fab fa-telegram"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/pandas_dev/">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://github.com/pandas-dev/pandas/">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://stackoverflow.com/questions/tagged/pandas">
+                        <i class="fab fa-stack-overflow"></i>
+                    </a>
+                </li>
+            </ul>
+            <p>
+                &copy; 2023 pandas via <a href="https://numfocus.org">NumFOCUS, Inc.</a> Hosted by <a href="https://www.ovhcloud.com">OVHcloud</a>.
+            </p>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" 
+                integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" 
+                crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            const faviconTag = document.getElementById('favicon-tag');
+            const matcher = window.matchMedia('(prefers-color-scheme:dark)');
+            
+            const onUpdate = () => {
+                if (matcher.matches) faviconTag.href = "../..//static/img/favicon_white.ico";
+                else faviconTag.href = "../..//static/img/favicon.ico";
+            };
+            
+            onUpdate();
+            
+            matcher.addEventListener('change', onUpdate);
+        </script>
+    </body>
+</html>
